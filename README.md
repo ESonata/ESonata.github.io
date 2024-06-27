@@ -86,15 +86,15 @@ pluginSchedulingLatency = promauto.NewHistogramVec(
 指标定义:
 action_scheduling_latency_microseconds为HistogramVec类型，在添加了action标签的情况下，统计了各个action执行工作所用的时延分布。
 
-``` 
-	actionSchedulingLatency = promauto.NewHistogramVec(
-		prometheus.HistogramOpts{
-			Subsystem: VolcanoNamespace,
-			Name:      "action_scheduling_latency_microseconds",
-			Help:      "Action scheduling latency in microseconds",
-			Buckets:   prometheus.ExponentialBuckets(5, 2, 10),
-		}, []string{"action"},
-	)
+```
+actionSchedulingLatency = promauto.NewHistogramVec(
+	prometheus.HistogramOpts{
+		Subsystem: VolcanoNamespace,
+		Name:      "action_scheduling_latency_microseconds",
+		Help:      "Action scheduling latency in microseconds",
+		Buckets:   prometheus.ExponentialBuckets(5, 2, 10),
+	}, []string{"action"},
+)
 ```
 
 #### 6. task_scheduling_latency_milliseconds
