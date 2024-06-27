@@ -99,7 +99,7 @@ actionSchedulingLatency = promauto.NewHistogramVec(
 
 #### 6. task_scheduling_latency_milliseconds
 分析描述：
-volcano job创建后，会有一个创建时间CreationTimestamp，调度器会根据Job创建唯一的PodGroup和相关的task pod，此时task pod会有一个创建时间，此时task pod还没有具体的NodeName，当调度器为pod绑定节点以及更新pod资源的NodeName后，会统计task pod从创建时间开始到更新NodeName完成后所用的时间，这个时间就是task_scheduling_latency_milliseconds。
+volcano job创建后，会有一个创建时间CreationTimestamp，调度器会根据Job创建唯一的PodGroup和相关的task pod，此时task pod会有一个创建时间，并且task pod还没有具体的NodeName，当调度器为pod绑定节点以及更新pod资源的NodeName后，会统计task pod从创建时间开始到更新NodeName完成后所用的时间，这个时间就是task_scheduling_latency_milliseconds。
 
 指标定义:
 task_scheduling_latency_milliseconds为Histogram类型，统计了所有volcano job所关联的每个task pod从创建时间到更新其NodeName字段后所用的持续时间。
