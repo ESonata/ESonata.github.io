@@ -1,11 +1,11 @@
 # volcano监控指标分析
 
-## 作业和任务区别
+## 作业和任务在调度器中的区别
 
 volcano的相关监控指标值都是从volcano-scheduler获取，此处作业和任务的定义以volcano-scheduler中的设计为依据。
 根据volcano-scheduler调度器中的设计，调度器中的Job作业信息指PodGroup，Task任务信息指与PodGroup有所关联的Pod
 
-## 关键指标项
+## 关键指标项分析
 
 #### 1. e2e_scheduling_latency_milliseconds
 分析描述：
