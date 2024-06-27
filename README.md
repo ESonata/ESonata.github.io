@@ -62,9 +62,9 @@ e2eJobSchedulingDuration = promauto.NewGaugeVec(
 
 #### 4. plugin_scheduling_latency_microseconds
 分析描述：
-更新plugin_scheduling_latency_microseconds值时有两种情况：
-1.每个调度周期开始后，即runOnce方法执行后，所有插件被遍历加载时，各个插件执行工作所用的时间会更新到plugin_scheduling_latency_microseconds
-2.每个调度周期结束后，即runOnce方法执行结束后，各个插件执行后续清理工作所用的时间会更新到plugin_scheduling_latency_microseconds
+更新plugin_scheduling_latency_microseconds值时有两种情况：<br>
+1.每个调度周期开始后，即runOnce方法执行后，所有插件被遍历加载时，各个插件执行工作所用的时间会更新到plugin_scheduling_latency_microseconds. <br>
+2.每个调度周期结束后，即runOnce方法执行结束后，各个插件执行后续清理工作所用的时间会更新到plugin_scheduling_latency_microseconds. <br>
 
 指标定义:
 plugin_scheduling_latency_microseconds为HistogramVec类型，在添加了plugin和OnSession标签的情况下，统计了各个插件执行工作所用的时延分布。
